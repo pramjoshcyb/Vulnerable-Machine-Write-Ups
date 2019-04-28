@@ -178,3 +178,70 @@ The exploit is written in the C programming language, I know this because it is 
 ![outputofc3.png](./Images/outputofc3.png)
 
 
+Next step is to transfer the exploit to the target and by researching online I found that the simplest way to achieve this is to host the file on an Apache server on the Kali machine and connect to the server from the target machine and download the file. 
+
+18. I issued the command: **ln -s /usr/share/exploitdb/exploits/linux/local/ /var/www/html/
+
+![ln-s.png](./Images/ln-s.png)
+
+This command establishes a link between the directory where the exploit is located and the directory that has the files on the server.
+
+19. **Command to start the Apache server:**
+
+![apachestart.png](./Images/apachestart.png)
+
+20. Ran a command on Kali called ***nano /var/www/html/run***
+
+![nano.png](./Images/nano.png)
+
+Creates a run page using the nano editor, apache has one server block enabled by default that is configured to serve documents from the /var/www/html directory. 
+
+21. Ran this command on the nano file:
+
+![nanocommandfile.png](./Images/nanocommandfile.png)
+
+When this file is executed, it will use netcat to connect to the Kali machine's IP Address on port 4321 and replicate a shell.
+
+WHy port 4321? - Uses TCP and guarantees delivery of data packets on that port in the same order in which they were sent. 
+
+22. I attempted to connect to the target via netcat, but it failed and I realised that I entered the command to create a link between the local directory and the server was wrong and I troubleshooted it myself using Google and discovered that the syntax was mentioned like below:
+
+![connecttarget.png](./Images/connecttarget.png)
+
+**Reference:** https://askubuntu.com/questions/543516/what-is-a-failed-to-create-a-symbolic-link-file-exists-error  
+
+
+23. I was ready to upload files on the target machine but I forgot that I was within the targets shell, instead of issuing the IP address of the Kali machine I issued the IP address of the target machine (Drupal). Hence, I was getting a 404 not found error. 
+
+![error.png](./Images/error.png)
+
+
+24. I fixed the error:
+
+![errorsolve.png](./Images/errorsolve.png)
+
+I can see that when I did a wget command with Kali machine’s IP address I changed to the tmp directory because I could read and write to it and wget was used to connect to the server running on Kali and transfer the files onto the target machine.  
+
+
+25. The C file that was executable is now saved onto the server:
+
+![errorsolve.png](./Images/errorsolve.png)
+
+26. I was able to compile the C file that had the exploit code and check that the file was transferred successfully.
+
+![exploitsuccess.png](./Images/exploitsuccess.png)
+
+27. I was able to achieve my goal of escalating privileges and getting root (full privileged access) on the target machine:
+
+![root.png](./Images/root.png)
+
+
+**Reference Used:**
+https://null-byte.wonderhowto.com/how-to/perform-local-privilege-escalation-using-linux-kernel-exploit-0186317/
+
+
+
+
+
+
+

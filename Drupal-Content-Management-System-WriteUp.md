@@ -18,8 +18,10 @@
  
  # Methodology Step By Step:
 
- 1. To establish what network, I am on in Kali Linux, I     inserted a command called: ***ifconfig***
- 
+ 1. To establish what network, I am on in Kali Linux, I inserted a command called: ***ifconfig***
+
+ ![Photo.png](./VulnerableMachine-Writeups/Images/Photo.png)
+
 
  
 

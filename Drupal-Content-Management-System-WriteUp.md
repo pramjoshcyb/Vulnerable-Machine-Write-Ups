@@ -1,4 +1,4 @@
-# Drupal - Content Management System Attack
+# Drupal - Content Management System
 ## Method: **Metasploit**
 ## Student Name: **Pramath Joshi**
 ## Instructors: **Mr Sayasmito and Mr David Jorm**

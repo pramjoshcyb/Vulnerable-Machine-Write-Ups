@@ -5,6 +5,7 @@
 ## Institution: **Coder Academy Melbourne**
 ## Aim: To Escalate Privileges and Achieve ROOT Access
 ## Exploit Name: **Email Server - Dovecot/POP3D**
+## Status: **To Be COMPLETED**
 
 # Background
 

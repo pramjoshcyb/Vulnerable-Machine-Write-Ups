@@ -16,4 +16,10 @@
 
 - It’s always free 
  
+ # Methodology Step By Step:
+
+ 1. To establish what network, I am on in Kali Linux, I     inserted a command called: ***ifconfig***
+ 
+
+ 
 

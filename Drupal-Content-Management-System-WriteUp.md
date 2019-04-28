@@ -45,3 +45,136 @@ I can see that 192.168.211.254 is the last usable address. I can finally see tha
 4. Fourthly, I opened Mozilla Firefox in my Virtual Machine and I inserted the Internet Protocol Address of ***192.168.211.133:80*** to see what comes up.
 
  ![drupal.png](./Images/drupal.png)
+
+ I can see from the output that it is not a secure link to the page since I have put both machines to host only. I can see it asks for a Username and Password. I know that it is the Drupal Content Management software.
+
+ 5. Fifthly, I issued a deeper NMAP scan to see what else I could find.
+
+ ![nmapdeep.png](./Images/nmapdeep.png)
+
+ The -Pn parameter treats all hosts as online and skips host discovery.
+ 
+ The -sV parameter is to probe open ports to get the service and version information of the target.
+
+The -A parameter enables Operating System detection, version detection, script scanning and traceroute. 
+
+The -p- parameter lists all ports.
+
+Finally the -v parameter deals with increasing verbosity levels. 
+
+![outputofdeep.png](./Images/outputofdeep.png)
+
+I can immediately see that I am getting the same output as the light weight scan because only one port is open. 
+
+I can see some additional information regarding which server the machine is running on and I can see it runs on Apache version 2.4.7 and runs on the Linux distributing system called Ubuntu. 
+
+I can immediately see that this machine is not secure because it uses MD5 (Message-Digest Algorithm) which is fast but not secure.  
+
+So, I can immediately recognise that this system will have vulnerabilities. 
+
+![nmapscandeep.png](./Images/nmapscandeep.png)
+
+I can see more information from the deep scan which relates to the files that the machine has included which can be useful for later.
+
+![MACADD.png](./Images/MACADD.png)
+
+This output is extremely important because it is giving me a report of which version of Linux Drupal is running on. 
+
+I can see it either runs on LINUX VERSION 3.X OR 4.X. 
+
+It is also giving me vital information regarding the Operating System Details which tells me that it uses Linux 3.2 – Linux 4.9. 
+
+I can use these two pieces of information to research more about the system and hopefully find something to get root. 
+
+6. I found out more information about the Operating system online and it gave me information about how I can get to a low privileged shell using the Metasploit framework. I ran the ***msfconsole*** command. 
+
+![msfconsole.png](./Images/msfconsole.png)
+
+MSF console loads up and gives me a command prompt.
+
+
+**Information on Metasploit**
+
+The Metasploit framework itself is a free, open source penetration testing solution that is created by the open source community. 
+
+The use of Metasploit is to basically defend the individual systems by breaking into them and to learn about vulnerabilities that pose a real risk.
+
+MSF console is the most popular interface to the Metasploit Framework, it gives an all in one centralised console and gives us efficient access to all the options in MSF. 
+
+It gives an easy opportunity for penetration testers to use a directory to the exploit found in the machine and set the target to be the machine’s IP and we can load a limited shell. 
+
+So, it Is an extremely powerful console. 
+
+7. I know that the exploit's name was drupal_drupageddon so I used a feature of the msfconsole called searchsploit to search for the path to where the exploit lives. 
+
+![msfconsoleoutput.png](./Images/msfconsoleoutput.png)
+
+I can see that it gives me details of when it was previously disclosed,which was during the year of 2014 and I can also see the path to the exploit code. 
+
+8. I inserted the command ***use: exploit/multi/http/drupal_drupageddon*** which allowed me to select the module by the name.
+
+![drupageddon.png](./Images/drupageddon.png)
+
+
+9. After that I inserted the command: ***show options*** which gave me the following output:
+
+![showoptions.png](./Images/showoptions.png)
+
+
+I can see that I have two options which may be of use to me, one is RHOST which means that I can set the host to be Drupal’s IP address and use that to exploit, I can also state the open port which is port 80 and MSF console recognised that its open because I had done a NMAP scan also.
+
+I also have information about the exploit target which gives me information about Drupal technology, and I can see the version number which is from 7.0 – 7.32 I can also do a PHP injection method. 
+
+10. I issued the ***set RHOST 192.168.211.133*** command. 
+
+![RHOST.png](./Images/RHOST.png)
+
+11. I used the command **exploit** which initiated a reverse TCP handler and established a session with Drupal and I was able to get meterpreter. 
+
+![exploit.png](./Images/exploit.png)
+
+Meterpreter is an advanced, extensible payload that uses in memory DLL injection. Meterpreter uses encrypted communications. I can use this to get a limited shell. 
+
+12. **I WAS ABLE TO GET A LIMITED SHELL WITH THE METERPRETER**
+
+![meterpreter.png](./Images/meterpreter.png)
+
+13. I ran the command called: ***uname -a*** to get kernel information about the target machine.
+
+![uname.png](./Images/uname.png)
+
+I can see that Linux Droopy is running on Linux Version 3.13.0 
+
+**Next Goal: BREAK OUT OF THE LIMITED SHELL AND ACHIEVE ROOT**
+
+14. I used the commands: **id**, **whoami**, **lsb_release -a to know more information about the system**
+
+![idwhoami.png](./Images/idwhoami.png)
+
+The target machine Drupal is running on Ubuntu 14.04 and Kali contains a local version of exploit dB which is a database that contains the exploits, code and publications. 
+
+I can access this information using a tool called SearchSploit by running the searchsploit command. 
+
+15. In step number 13 I was able to view which kernel the Drupal machine was running on and with this information I was able to insert the command to find the exploit that has the local privilege escalation: ***searchsploit Linux 3.13***
+
+![linux3.13.png](./Images/linux3.13.png)
+
+The output in the screenshot informs me about the path to the exploit of the local privilege escalation. 
+
+16. I was then able to do a thorough search using the command: ***locate exploits/linux/local/37292.c***
+
+![37292.c.png](./Images/37292.c.png)
+
+The exploit is written in the C programming language, I know this because it is a C extension and the locate command is used to discover the full path. 
+
+17. I was able to do a **cat /usr/share/exploitdb/exploits/linux/local/37292.c** command on the path and I was able to read the file which is written in C. 
+
+![37292second.png](./Images/37292second.png)
+
+![outputofc.png](./Images/outputofc.png)
+
+![outputofc2.png](./Images/outputofc2.png)
+
+![outputofc3.png](./Images/outputofc3.png)
+
+

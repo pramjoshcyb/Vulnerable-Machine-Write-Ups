@@ -4,6 +4,6 @@ Welcome to the Vulnerable Machine Write Ups repository, here you will find my wr
 The machine's are called:
 
 - Drupal Content Management System
-- FowSniff Corporation
+- Fowsniff Corporation
 - FourandSix
 - White Christmas

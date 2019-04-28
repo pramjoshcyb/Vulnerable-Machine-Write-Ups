@@ -36,4 +36,12 @@ As you can see from the output, I can see 3 IP addresses and the vendors are all
 
 I can see that 192.168.211.254 is the last usable address. I can finally see that the Drupal machine must be on 192.168.211.133 with the above MAC address which is the physical address.
 
-3. 
+3. THirdly, I issued the command for an NMAP scan which stands for Network Mapping to discover any open ports on that machine by issuing the command: ***NMAP 192.168.211.133***
+
+ ![NMAP.png](./Images/NMAP.png)
+
+ This is a light-weight scan to quickly observe which port is open. I can see from the report that port 80 is open and it’s on TCP which primarily is a web server running on port 80. I can see that the state is open and the service it’s offering is http which is Hyper Text Transfer Protocol.  
+
+4. Fourthly, I opened Mozilla Firefox in my Virtual Machine and I inserted the Internet Protocol Address of ***192.168.211.133:80*** to see what comes up.
+
+ ![drupal.png](./Images/drupal.png)

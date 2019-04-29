@@ -64,6 +64,17 @@ The files I am concerned about is id_rsa which is the client’s private key and
 
 ![permissions.png](./Images/permissions.png)
 
+11. Tried to use the Metasploit module for SSH login with the public key but it seems to have failed.
+
+![metasploit.png](./Images/metasploit.png)
+
+12. I opened the id_rsa file to see what I can read, and it seems to be an encrypted version of the OpenSSH Private Key. This gives me clues as to how I can decrypt the file since the machine also has an Open SSH vulnerability 7.9. 
+
+![OpenSSH.png](./Images/OpenSSH.png)
+
+**This has been my PROGRESS so far**
+
+
 
 
 

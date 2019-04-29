@@ -59,5 +59,19 @@ They have also mentioned that this organisation has left their pop3 email server
 
 ![fowsniffcorppwdleak.png](./Images/fowsniffcorppwdleak.png)
 
+7. I also discovered their Twitter page where the attacker had dumped all the employee passwords.
+
+
+![fowsniffemployeepwd.png](./Images/fowsniffemployeepwd.png)
+
+8. I also discovered some interesting information related to the admin passwords which may hint at an SSH login credential to gain administrative access.
+
+![adminaccessfows.png](./Images/adminaccessfows.png)
+
+9. I clicked on the link in the previous Tweet which gives me some facts related to the organisation which may not be helpful but I did use crackstation to decrypt the hashes. 
+
+![hashesfows.png](./Images/hashesfows.png)
+
+
 
 

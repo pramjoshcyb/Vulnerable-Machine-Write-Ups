@@ -91,9 +91,60 @@ I knew I had to find this information because if I can find which OS the machine
  
  I know I cannot use these services to attack White Christmas because they are all running on the Operating System of Microsoft, but my target machine is running on Linux, so I cannot use this.
 
+ From the Internet I found out that MSRPC is a Microsoft Remote Procedure Call and is a protocol that uses the client-server architecture to allow one program to request service from a program on another computer excluding the need to understand the details of that computer’s network
+
  ![nmap-T5.png](./Images/nmap-T5.png)
 
- 
+
+ 9. I did a deep scan of the target and discovered another TCP port on 1898.
+
+![1898.png](./Images/1898.png)
+
+10. On Mozilla Firefox on Kali I found out what runs on port 1898 and discovered the White Christmas website like the Drupal Content Management System website.
+
+![whitechr80.png](./Images/whitechr80.png)
+
+
+11. I can also see that the website is powered by Drupal meaning that it is running on Drupal technology. I know that it uses a similar methodology.
+
+![drupalpowered.png](./Images/drupalpowered.png)
+
+12. I wanted to see if I could find any clues related to the password fields in the login section. I checked this by doing a control shift S to see the console and it displayed this:
+
+![developertools.png](./Images/developertools.png)
+
+I immediately recognised that this can be vulnerable to an attack like SQL injection, I viewed the page source but I could not find anything so I decided to move on and look for other hints.
+
+13. I researched online to see if there are any other methods of exploiting SSH and getting the user credentials and I found a website where it has the SSH auxiliary module to login via SSH. 
+
+I investigated the module and found that it can not only test a set of credentials across a range of IP’s, but it can perform brute force login attempts.
+
+So, it told me to use the Metasploit framework to pass a file to the module containing usernames and passwords separated by a space. 
+
+![metasploit-framework.png](./Images/metasploit-framework.png)
+
+14. I loaded the scanner module for Secure Shell Login in Metasploit and set the USERPASS_FILE to point to my list of credentials to attempt. 
+
+![SSH.png](./Images/SSH.png)
+
+![userpass.png](./Images/userpass.png)
+
+![scanner.png](./Images/scanner.png)
+
+15. Tried to search OpenSSH in Metasploit or SSH Login, but the result of this search was a failure so I went online and attempted to search for any clues I can find to deepen my understanding and I found another method:
+
+![sshlogin.png](./Images/sshlogin.png)
+
+16. 
+
+
+
+
+
+
+
+
+
 
 
 

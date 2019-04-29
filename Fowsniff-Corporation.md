@@ -42,5 +42,20 @@ The organisation has also said that these credentials have been publicly availab
 
 They have also suggested that their twitter account has been taken over and hint at the attackers releasing sensitive information via this social media service. 
 
+![fowsniffcorphome.png](./Images/fowsniffcorphome.png)
 
+5. I went to my host machine and performed a Google search regarding any clues I may find attached to the organisation. 
+
+I found a URL that is called pastebin.com which I will dive deep into.
+
+![fowsniffcorppaste.png](./Images/fowsniffcorppaste.png)
+
+
+6. I found information on that link that relates to a password leak by an attacker which they have used to leak email passwords which are MD5 encrypted.
+
+I know MD5 hash is not strong and is easy to crack, and is insecure.
+
+They have also mentioned that this organisation has left their pop3 email server open which may help me later.
+
+![fowsniffcorppwdleak.png](./Images/fowsniffcorppwdleak.png)
 

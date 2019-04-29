@@ -1,4 +1,4 @@
-# Drupal - Fowsniff Corporation 
+# Fowsniff Corporation 
 ## Method: **Enumeration**
 ## Student Name: **Pramath Joshi**
 ## Instructors: **Mr Sayasmito and Mr David Jorm**

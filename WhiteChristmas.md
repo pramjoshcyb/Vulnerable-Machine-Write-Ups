@@ -135,7 +135,30 @@ So, it told me to use the Metasploit framework to pass a file to the module cont
 
 ![sshlogin.png](./Images/sshlogin.png)
 
-16. 
+16. I searched for the module ssh_login and found a directory to the module under auxiliary/scanner/ssh/ssh_login
+
+![useaux.png](./Images/useaux.png)
+
+17. I then issued the command "use" to use that module:
+
+![usemod.png](./Images/usemod.png)
+
+I typed options and I could see the most relevant was to create a text file with the users and use the USER_FILE argument in Metasploit to attack against the target, I also created a text file with common passwords and I could use the PASS_FILE to attack against the target. 
+
+18. I set the target host to be White Christmas machine's IP Address and I set the USER_FILE to be linked to the user.txt file under the path /root/desktop/user.txt
+
+![userdesktop.png](./Images/userdesktop.png)
+
+
+19. I set the PASS_FILE to be linked to the password.txt file under the path /root/Desktop/password.txt
+
+![passfile.png](./Images/passfile.png)
+
+20. I set the STOP_ON_SUCCESS to be true so when it gets the right credentials it stops guessing. 
+
+![stoponsuccess.png](./Images/stoponsuccess.png)
+
+
 
 
 

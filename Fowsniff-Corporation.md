@@ -105,6 +105,27 @@ I used the command called list which informed me about the messages that have be
 
 ![listfows.png](./Images/listfows.png)
 
+13. I was able to read an email that is sent to user seina and the other colleagues from user stone, who is warning the organisation that an attacker was able to enter their email systems and compromise the database.
+
+![emailfowsniff.png](./Images/emailfowsniff.png)
+
+14. Discovered many clues because I can see that their POP3 server can send and receive local emails only. They can also access this server using the SSH protocol. 
+Mr Stone has also told them that the temporary password for the SSH login is as above and informed them to change their current, weak and outdated passwords. 
+
+![stonefowsniff.png](./Images/stonefowsniff.png)
+
+15. Obviously with the second email, baksteen user did not pay attention to the sensitivity of the issue and decided to ignore the email and come back to it later.
+
+I knew that the others had changed their password immediately because I tried logging in as each user, the system did not accept the temporary SSH password. 
+
+![baksteenfowsniff.png](./Images/baksteenfowsniff.png)
+
+
+
+
+
+
+
 
 
 

@@ -50,6 +50,22 @@ I cannot unzip it since its password protected, hence using
 
 I can see the password in clear text.
 
+8. I ran the command 7za e backup.7z which extracted the backup.7z file
+
+![backup.7zcmd.png](./Images/backup.7zcmd.png)
+
+9. When I issued a ls -la command on the terminal I was able to see interesting files which can be of use in the future.
+
+The files I am concerned about is id_rsa which is the client’s private key and the id_rsa.pub which is the client’s public key.
+
+![ls-la.png](./Images/ls-la.png)
+
+10. Changed the permissions for both the private and public keys because I need to decrypt both. 
+
+![permissions.png](./Images/permissions.png)
+
+
+
 
 
 

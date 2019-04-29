@@ -81,7 +81,20 @@ I knew I had to find this information because if I can find which OS the machine
  ![secondimageLinux.png](./Images/secondimageLinux.png)
 
 
- 7. 
+ 7. I wanted to see if there are any other ports that may give me other clues, so I did a Nmap scan for the top 10 ports that are commonly used and still found that only port 22 for SSH and port 80 are open. 
+
+ ![nmapscantop.png](./Images/nmapscantop.png)
+
+ 8. I surprisingly discovered other ports which I never knew of by issuing the command Nmap -T5 192.168.211.0/24 which is an operation to quickly scan all devices and computers for open ports. 
+ 
+ I can now find out more information about the services that is running on these ports because I do not know what msrpc, NetBIOS’s and Microsoft-ds is. 
+ 
+ I know I cannot use these services to attack White Christmas because they are all running on the Operating System of Microsoft, but my target machine is running on Linux, so I cannot use this.
+
+ ![nmap-T5.png](./Images/nmap-T5.png)
+
+ 
+
 
 
 

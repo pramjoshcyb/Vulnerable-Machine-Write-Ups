@@ -72,6 +72,41 @@ They have also mentioned that this organisation has left their pop3 email server
 
 ![hashesfows.png](./Images/hashesfows.png)
 
+Users are:
+mauer@fowsniff
+mustikka@fowsniff
+tege1@fowsniff
+baksteen@fowsniff
+seina@fowsniff
+stone@fowsniff
+mursten@fowsniff
+parede@fowsniff
+sciana@fowsniff
+
+First I tried to use John the Ripper to crack the passwords of the employees but it was using 100% of my Linux Machine’s Central Processing Unit, so I used an online resource called https://crackstation.net which has the capability of cracking hashes that are of the LM,NTLM, md2, md4, md5, md5(md5_hex), md5-half, sha1, sha224, sha256, sha384, sha512, ripeMD160 types.
+
+I was able to crack 8 of the employee passwords using this tool. There are 2 failures which may interpret that they are hashed in another format, especially the last encrypted password which is the admin’s password, may have been salted or encrypted using some other form of hash. 
+
+
+10. I knew that port 110 was open because the deep NMAP scan revealed that the service on port 110 offered is the pop3 email server. The twitter page also revealed that their pop3 server was open, so I tried to telnet to the servers IP address through port 110 and I was successfully able to login. 
+
+![telnetfowsniff.png](./Images/telnetfowsniff.png)
+
+
+11. After a few attempts I was able to login as seina with the password scoobydoo2.
+
+![telnetscoob.png](./Images/telnetscoob.png)
+
+12. I used the mentioned website to lookup a few commands related to the POP3 server. 
+
+https://www.shellhacks.com/retrieve-email-pop3-server-command-line/ 
+
+I used the command called list which informed me about the messages that have been received.
+
+![listfows.png](./Images/listfows.png)
+
+
+
 
 
 

@@ -57,6 +57,36 @@ I copied the wordlist files listed in the screenshot: WORDLIST_FILES: /usr/share
 
 ![dirbfile.png](./Images/dirbfile.png)
 
+I realised that it contains a hidden text file called password or passwords and I can see many other directories that would be of good use. 
+
+With Mr Sayas’s help I was able to figure out that this is not the wordlists that is on the target machine and the commons.txt is a word list that's on the Kali machine 7 and Dirb uses that to find directories. 
+
+So, I was incorrect in my findings here and I will refine the search and try something else. 
+
+5. I used the above URL that I had posted and did a Nmap -A 192.168.211.134 command which detects Operating System and Services the machine is running. 
+
+I knew I had to find this information because if I can find which OS the machine runs on, I can gather more information or hints which I can use to crack the machine. 
+
+![nmap-A.png](./Images/nmap-A.png)
+
+ From the above image I know that it is giving me information about which port is open and more information about the version of the SSH which is 6.6.1. It is also giving me information about the ssh-hostkey which I need to find out about. 
+
+
+ 6. The image below is giving me information about the machine’s physical address and the most critical is that its displaying that the technology that the machine is running on is Linux 3.X by 4.X. 
+ 
+ The screenshot also presents that the Operating System that its using is Linux 3.2 – 4.9 so I can use this information to find out more information about the machine. 
+ 
+ The screenshot also gives me facts about the service that is Linux kernel.
+ 
+ ![secondimageLinux.png](./Images/secondimageLinux.png)
+
+
+ 7. 
+
+
+
+
+
 
 
 

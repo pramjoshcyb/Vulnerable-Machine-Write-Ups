@@ -158,6 +158,22 @@ I typed options and I could see the most relevant was to create a text file with
 
 ![stoponsuccess.png](./Images/stoponsuccess.png)
 
+21. I set the VERBOSE to be true, so it prints the attempts for each user and password that it tried against the target. 
+
+![verbose.png](./Images/verbose.png)
+
+22. Scan failed so I must adopt to approach the attack with another method which I have figured out below
+
+
+![scanfail.png](./Images/scanfail.png)
+
+23. Big clue that I found was in the output of the deep NMAP scan which I missed earlier. I found something called install.php which is a shell execution code. 
+
+![install.png](./Images/install.png)
+
+**This has been my progress so far**
+
+
 
 
 

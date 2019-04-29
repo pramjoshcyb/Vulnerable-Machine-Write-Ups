@@ -120,6 +120,13 @@ I knew that the others had changed their password immediately because I tried lo
 
 ![baksteenfowsniff.png](./Images/baksteenfowsniff.png)
 
+16. Reached upto the stage where User baksteen fell into the trap and as a result I was able to gain their user access to the Fowsniff Corporation's Server.
+
+From here on in I am yet to achieve root access and this has been my progress so far.
+
+![fowsniffcorpuser.png](./Images/fowsniffcorpuser.png)
+
+
 
 
 
